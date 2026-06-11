@@ -39,7 +39,7 @@ async function fetchWikiImage(key) {
 /* ──────────────────────────── LANGUES ─────────────────────── */
 const LANG = {
   fr: {
-    nav: ["Rites", "Hôtels", "Checklist", "Invocations", "FAQ", "Contact"],
+    nav: ["Rites", "Hôtels", "Checklist", "Invocations", "FAQ", "Visa", "Contact"],
     hero_badge: "Guide gratuit · FR / EN / AR",
     hero_h1: ["Préparez votre", "Hajj & Omra", "sereinement"],
     hero_p: "Rites étape par étape, programme de séjour personnalisé, hôtels à Makkah et Médine, checklist complète et invocations authentiques.",
@@ -80,10 +80,11 @@ const LANG = {
     contact_submit: "Envoyer le message →",
     footer_desc: "Guide complet et gratuit du Hajj et de la Omra. Rites, hôtels, checklist et invocations pour préparer votre pèlerinage sereinement.",
     footer_links: "Navigation", footer_resources: "Ressources",
+    visa_title: "Visa & Prérequis", visa_sub: "Procédure visa Omra et conditions Hajj selon votre nationalité.", visa_omra_title: "Procédure visa Omra", visa_hajj_title: "Conditions & quota Hajj", visa_cost: "Frais de visa", visa_quota: "Quota national", visa_note: "Informations indicatives — vérifiez toujours auprès du Consulat d'Arabie Saoudite ou de nusuk.sa avant votre départ.",
     disclaimer: "Ce site est un guide informatif. Pour les questions religieuses, consultez un savant ou votre imam. Les visas Hajj passent obligatoirement par les agences agréées de votre pays.",
   },
   en: {
-    nav: ["Rituals", "Hotels", "Checklist", "Duas", "FAQ", "Contact"],
+    nav: ["Rituals", "Hotels", "Checklist", "Duas", "FAQ", "Visa", "Contact"],
     hero_badge: "Free guide · FR / EN / AR",
     hero_h1: ["Prepare your", "Hajj & Umrah", "with peace of mind"],
     hero_p: "Step-by-step rituals, personalized stay program, hotels in Makkah and Madinah, complete checklist and authentic supplications.",
@@ -124,10 +125,11 @@ const LANG = {
     contact_submit: "Send message →",
     footer_desc: "Complete free guide for Hajj and Umrah. Rituals, hotels, checklist and supplications to prepare your pilgrimage with peace of mind.",
     footer_links: "Navigation", footer_resources: "Resources",
+    visa_title: "Visa & Requirements", visa_sub: "Umrah visa procedure and Hajj prerequisites by nationality.", visa_omra_title: "Umrah visa procedure", visa_hajj_title: "Hajj conditions & quota", visa_cost: "Visa fee", visa_quota: "National quota", visa_note: "Indicative information — always verify with the Saudi Consulate or nusuk.sa before departure.",
     disclaimer: "This site is an informative guide. For religious rulings, consult a scholar or your imam. Hajj visas must go through your country's licensed agencies.",
   },
   ar: {
-    nav: ["المناسك", "الفنادق", "قائمة التحضير", "الأدعية", "الأسئلة", "اتصل بنا"],
+    nav: ["المناسك", "الفنادق", "قائمة التحضير", "الأدعية", "الأسئلة", "التأشيرة", "اتصل بنا"],
     hero_badge: "دليل مجاني · فرنسي / إنجليزي / عربي",
     hero_h1: ["استعد لأداء", "الحج والعمرة", "بطمأنينة"],
     hero_p: "المناسك خطوة بخطوة، برنامج إقامة مخصص، فنادق مكة والمدينة، قائمة تحضير كاملة وأدعية مأثورة.",
@@ -168,6 +170,7 @@ const LANG = {
     contact_submit: "← إرسال الرسالة",
     footer_desc: "دليل شامل ومجاني للحج والعمرة. المناسك والفنادق وقائمة التحضير والأدعية لتستعد لرحلتك بطمأنينة.",
     footer_links: "التنقل", footer_resources: "موارد",
+    visa_title: "التأشيرة والمتطلبات", visa_sub: "إجراءات تأشيرة العمرة وشروط الحج حسب جنسيتك.", visa_omra_title: "إجراءات تأشيرة العمرة", visa_hajj_title: "شروط الحج والحصة", visa_cost: "رسوم التأشيرة", visa_quota: "الحصة الوطنية", visa_note: "معلومات إرشادية — تحقق دائمًا من قنصلية المملكة العربية السعودية أو nusuk.sa قبل سفرك.",
     disclaimer: "هذا الموقع دليل إرشادي. للمسائل الشرعية، استشر أهل العلم. تأشيرات الحج تتم حصريًا عبر الوكالات المعتمدة في بلدك.",
   },
 };
@@ -218,9 +221,9 @@ const MIQATS = [
 
 /* ──────────────────────────── BUDGETS ─────────────────────── */
 const BUDGETS = {
-  serré: { icon: "🎒", color: "#2DD4BF", label: { fr: "Économique", en: "Budget", ar: "اقتصادي" }, omra: "≈ 1 200 – 1 800 €", hajj: "≈ 5 000 – 7 000 €" },
-  moyen: { icon: "✈️", color: "#F59E0B", label: { fr: "Confort", en: "Comfort", ar: "مريح" }, omra: "≈ 2 000 – 3 500 €", hajj: "≈ 7 000 – 11 000 €" },
-  riche: { icon: "💎", color: "#8B5CF6", label: { fr: "Premium", en: "Premium", ar: "فاخر" }, omra: "≈ 4 000 € +", hajj: "≈ 12 000 € +" },
+  serré: { icon: "🎒", color: "#16A085", label: { fr: "Économique", en: "Budget", ar: "اقتصادي" }, omra: "≈ 1 200 – 1 800 €", hajj: "≈ 5 000 – 7 000 €" },
+  moyen: { icon: "✈️", color: "#C8A84B", label: { fr: "Confort", en: "Comfort", ar: "مريح" }, omra: "≈ 2 000 – 3 500 €", hajj: "≈ 7 000 – 11 000 €" },
+  riche: { icon: "💎", color: "#7B3FA8", label: { fr: "Premium", en: "Premium", ar: "فاخر" }, omra: "≈ 4 000 € +", hajj: "≈ 12 000 € +" },
 };
 
 /* ──────────────────────────── HÔTELS ──────────────────────── */
@@ -342,6 +345,50 @@ const BOOK = {
   maps: q => `https://www.google.com/maps/search/${encodeURIComponent(q)}`,
 };
 
+/* ─────────────────────────── VISA & PRÉREQUIS ─────────────────────── */
+const VISA_COUNTRIES = {
+  fr: { flag: "🇫🇷", name: { fr: "France", en: "France", ar: "فرنسا" },
+    omra: { cost: "≈ 300 – 500 SAR",
+      steps: { fr: ["Créer un compte sur nusuk.sa (plateforme officielle saoudienne)", "Remplir le formulaire de visa Omra et payer en ligne (carte bancaire internationale)", "Recevoir le visa électronique par email sous 24-72h", "Télécharger l'app Nusuk et enregistrer le visa avant le départ"], en: ["Create an account on nusuk.sa (official Saudi platform)", "Fill in the Umrah visa form and pay online (international bank card)", "Receive e-visa by email within 24-72h", "Download the Nusuk app and register the visa before departure"], ar: ["إنشاء حساب على nusuk.sa (المنصة السعودية الرسمية)", "ملء نموذج تأشيرة العمرة والدفع عبر الإنترنت ببطاقة مصرفية دولية", "استلام التأشيرة الإلكترونية بالبريد خلال ٢٤-٧٢ ساعة", "تحميل تطبيق نسك وتسجيل التأشيرة قبل السفر"] } },
+    hajj: { body: { fr: "Agences agréées par l'Ambassade d'Arabie Saoudite à Paris", en: "Agencies approved by the Saudi Embassy in Paris", ar: "وكالات معتمدة من سفارة المملكة في باريس" }, quota: "≈ 3 000 places/an",
+      steps: { fr: ["Contacter une agence agréée par le Consulat Général d'Arabie Saoudite", "Fournir : passeport valide, vaccin méningite ACYW135, déclaration sur l'honneur de confession islamique", "Règle saoudienne : 1 Hajj autorisé tous les 5 ans minimum"], en: ["Contact an agency approved by the Saudi Consulate General", "Provide: valid passport, ACYW135 meningitis vaccine, sworn declaration of Muslim faith", "Saudi rule: 1 Hajj permitted every 5 years minimum"], ar: ["التواصل مع وكالة معتمدة من القنصلية السعودية العامة", "تقديم: جواز سفر ساري، لقاح الحمى الشوكية ACYW135، إقرار بالإسلام", "قاعدة سعودية: حجة واحدة مسموح بها كل خمس سنوات على الأقل"] } } },
+  ma: { flag: "🇲🇦", name: { fr: "Maroc", en: "Morocco", ar: "المغرب" },
+    omra: { cost: "≈ 200 – 400 SAR",
+      steps: { fr: ["Via nusuk.sa (e-visa direct) ou agence marocaine agréée", "Passeport valide 6 mois minimum + vaccin méningite ACYW135 obligatoire", "Visa valable 90 jours, entrées multiples — paiement en ligne"], en: ["Via nusuk.sa (direct e-visa) or licensed Moroccan agency", "Passport valid 6+ months + ACYW135 meningitis vaccine required", "Visa valid 90 days, multiple entries — online payment"], ar: ["عبر nusuk.sa أو وكالة مغربية معتمدة", "جواز سفر صالح ٦ أشهر + لقاح الحمى الشوكية ACYW135 إلزامي", "التأشيرة صالحة ٩٠ يومًا بدخول متعدد — الدفع إلكترونيًا"] } },
+    hajj: { body: { fr: "Ministère des Habous et des Affaires Islamiques (habous.gov.ma)", en: "Ministry of Habous and Islamic Affairs (habous.gov.ma)", ar: "وزارة الأوقاف والشؤون الإسلامية (habous.gov.ma)" }, quota: "≈ 33 000 places/an",
+      steps: { fr: ["S'inscrire auprès du Ministère des Habous ou d'une agence agréée", "Dossier : passeport, acte de naissance, vaccin méningite, 2 photos", "Tirage au sort si le quota est dépassé — priorité aux non-hajjis"], en: ["Register with the Ministry of Habous or an approved agency", "File: passport, birth certificate, meningitis vaccine, 2 photos", "Lottery if quota exceeded — priority for first-time pilgrims"], ar: ["التسجيل لدى وزارة الأوقاف أو وكالة معتمدة", "الملف: جواز السفر وشهادة الميلاد ولقاح الحمى الشوكية وصورتان", "قرعة إذا تجاوز عدد المتقدمين الحصة — أولوية لمن لم يحج"] } } },
+  dz: { flag: "🇩🇿", name: { fr: "Algérie", en: "Algeria", ar: "الجزائر" },
+    omra: { cost: "≈ 200 – 400 SAR",
+      steps: { fr: ["Via nusuk.sa ou agence agréée par l'ONHO (Algérie)", "Passeport valide 6 mois + vaccin méningite ACYW135", "Paiement par carte Mastercard / Visa internationale uniquement"], en: ["Via nusuk.sa or ONHO-approved agency (Algeria)", "Passport valid 6+ months + ACYW135 meningitis vaccine", "Payment by international Mastercard / Visa only"], ar: ["عبر nusuk.sa أو وكالة معتمدة من الديوان الوطني للحج والعمرة", "جواز سفر صالح ٦ أشهر + لقاح الحمى الشوكية ACYW135", "الدفع ببطاقة ماستركارد / فيزا دولية فقط"] } },
+    hajj: { body: { fr: "Office National du Hadj et de la Omra — ONHO (onho.dz)", en: "National Office of Hajj and Umrah — ONHO (onho.dz)", ar: "الديوان الوطني للحج والعمرة (onho.dz)" }, quota: "≈ 36 000 places/an",
+      steps: { fr: ["Inscription à l'ONHO en ligne (onho.dz) ou au bureau de wilaya", "Dossier : passeport, acte de naissance, vaccins, 2 photos", "Paiement intégral obligatoire à l'inscription — tirage au sort si surnombre"], en: ["Register with ONHO online (onho.dz) or at your wilaya office", "File: passport, birth certificate, vaccines, 2 photos", "Full payment required upon registration — lottery if oversubscribed"], ar: ["التسجيل في الديوان الوطني إلكترونيًا أو في مكتب الولاية", "الملف: جواز السفر وشهادة الميلاد واللقاحات وصورتان", "الدفع الكامل إلزامي عند التسجيل — قرعة إذا تجاوز العدد الحصة"] } } },
+  tn: { flag: "🇹🇳", name: { fr: "Tunisie", en: "Tunisia", ar: "تونس" },
+    omra: { cost: "≈ 200 – 400 SAR",
+      steps: { fr: ["Via nusuk.sa ou agence tunisienne agréée", "Passeport + vaccin méningite ACYW135 + carte bancaire internationale"], en: ["Via nusuk.sa or licensed Tunisian agency", "Passport + ACYW135 meningitis vaccine + international bank card"], ar: ["عبر nusuk.sa أو وكالة تونسية معتمدة", "جواز السفر + لقاح الحمى الشوكية ACYW135 + بطاقة مصرفية دولية"] } },
+    hajj: { body: { fr: "Ministère des Affaires Religieuses (affaires-religieuses.gov.tn)", en: "Ministry of Religious Affairs (affaires-religieuses.gov.tn)", ar: "وزارة الشؤون الدينية (affaires-religieuses.gov.tn)" }, quota: "≈ 10 500 places/an",
+      steps: { fr: ["Inscription via le Ministère des Affaires Religieuses", "Tirage au sort national si le nombre d'inscrits dépasse le quota", "Priorité aux premières inscriptions et aux non-hajjis"], en: ["Register via Ministry of Religious Affairs", "National lottery if registered candidates exceed quota", "Priority for first registrations and first-time pilgrims"], ar: ["التسجيل عبر وزارة الشؤون الدينية", "قرعة وطنية إذا تجاوز عدد المسجلين الحصة", "الأولوية للمسجلين الجدد ومن لم يحجوا"] } } },
+  be: { flag: "🇧🇪", name: { fr: "Belgique", en: "Belgium", ar: "بلجيكا" },
+    omra: { cost: "≈ 300 – 500 SAR",
+      steps: { fr: ["Via nusuk.sa (e-visa direct) ou agence agréée en Belgique", "Passeport belge valide + vaccin méningite ACYW135", "Aucun quota — visa Omra accessible toute l'année"], en: ["Via nusuk.sa (direct e-visa) or approved agency in Belgium", "Valid Belgian passport + ACYW135 meningitis vaccine", "No quota — Umrah visa available year-round"], ar: ["عبر nusuk.sa أو وكالة معتمدة في بلجيكا", "جواز سفر بلجيكي ساري + لقاح الحمى الشوكية ACYW135", "لا حصة — تأشيرة العمرة متاحة طوال العام"] } },
+    hajj: { body: { fr: "Agences agréées par l'Ambassade d'Arabie Saoudite à Bruxelles", en: "Agencies approved by the Saudi Embassy in Brussels", ar: "وكالات معتمدة من سفارة المملكة في بروكسل" }, quota: "≈ 1 800 places/an",
+      steps: { fr: ["Contacter une agence agréée par l'Ambassade saoudienne à Bruxelles", "Dossier : passeport, vaccins, attestation de foi islamique, photo", "Paiement intégral de la formule Hajj à l'agence"], en: ["Contact an agency approved by the Saudi Embassy in Brussels", "File: passport, vaccines, Islamic faith certificate, photo", "Full Hajj package payment to the agency"], ar: ["التواصل مع وكالة معتمدة من سفارة المملكة في بروكسل", "الملف: جواز السفر واللقاحات وشهادة إسلام والصورة", "دفع تكلفة باقة الحج كاملة للوكالة"] } } },
+  ca: { flag: "🇨🇦", name: { fr: "Canada", en: "Canada", ar: "كندا" },
+    omra: { cost: "≈ 300 – 500 SAR",
+      steps: { fr: ["Via nusuk.sa ou agence canadienne agréée par le Consulat saoudien", "Passeport canadien valide + vaccin méningite ACYW135", "Paiement par carte Visa/Mastercard internationale"], en: ["Via nusuk.sa or Canadian agency approved by Saudi Consulate", "Valid Canadian passport + ACYW135 meningitis vaccine", "Payment by international Visa/Mastercard"], ar: ["عبر nusuk.sa أو وكالة كندية معتمدة من القنصلية السعودية", "جواز سفر كندي ساري + لقاح الحمى الشوكية ACYW135", "الدفع ببطاقة فيزا/ماستركارد دولية"] } },
+    hajj: { body: { fr: "ISNA Canada + agences agréées par le Consulat saoudien", en: "ISNA Canada + agencies approved by Saudi Consulate", ar: "ISNA كندا + وكالات معتمدة من القنصلية السعودية" }, quota: "≈ 6 000 places/an",
+      steps: { fr: ["Via une agence agréée par le Consulat général d'Arabie Saoudite (Toronto / Ottawa)", "Documents : passeport, vaccins, attestation de foi islamique, photo"], en: ["Via an agency approved by the Saudi Consulate General (Toronto / Ottawa)", "Documents: passport, vaccines, Islamic faith certificate, photo"], ar: ["عبر وكالة معتمدة من القنصلية السعودية العامة (تورونتو / أوتاوا)", "الوثائق: جواز السفر واللقاحات وشهادة إسلام والصورة"] } } },
+  gb: { flag: "🇬🇧", name: { fr: "Royaume-Uni", en: "United Kingdom", ar: "المملكة المتحدة" },
+    omra: { cost: "≈ 300 – 500 SAR",
+      steps: { fr: ["Via nusuk.sa (e-visa direct) ou agence agréée au Royaume-Uni", "Passeport britannique valide + vaccin méningite ACYW135"], en: ["Via nusuk.sa (direct e-visa) or approved UK agency", "Valid British passport + ACYW135 meningitis vaccine"], ar: ["عبر nusuk.sa أو وكالة معتمدة في المملكة المتحدة", "جواز سفر بريطاني ساري + لقاح الحمى الشوكية ACYW135"] } },
+    hajj: { body: { fr: "Muslim Council of Britain + agences agréées par l'Ambassade saoudienne", en: "Muslim Council of Britain + Saudi Embassy-approved agencies", ar: "مجلس المسلمين في بريطانيا + وكالات معتمدة من السفارة السعودية" }, quota: "≈ 25 000 places/an",
+      steps: { fr: ["Contacter une agence agréée par l'Ambassade saoudienne à Londres", "Documents : passeport, vaccins, preuve d'identité islamique, photo"], en: ["Contact an agency approved by the Saudi Embassy in London", "Documents: passport, vaccines, proof of Islamic identity, photo"], ar: ["التواصل مع وكالة معتمدة من السفارة السعودية في لندن", "الوثائق: جواز السفر واللقاحات وما يثبت الهوية الإسلامية والصورة"] } } },
+  sn: { flag: "🇸🇳", name: { fr: "Sénégal", en: "Senegal", ar: "السنغال" },
+    omra: { cost: "≈ 200 – 400 SAR",
+      steps: { fr: ["Via nusuk.sa ou agence sénégalaise agréée", "Passeport valide + vaccin méningite ACYW135 + preuve de foi islamique"], en: ["Via nusuk.sa or approved Senegalese agency", "Valid passport + ACYW135 meningitis vaccine + proof of Islamic faith"], ar: ["عبر nusuk.sa أو وكالة سنغالية معتمدة", "جواز سفر ساري + لقاح الحمى الشوكية ACYW135 + ما يثبت الإسلام"] } },
+    hajj: { body: { fr: "Commissariat Général au Pèlerinage — CGP (Sénégal)", en: "General Commission for Pilgrimage — CGP (Senegal)", ar: "المفوضية العامة للحج بالسنغال" }, quota: "≈ 12 000 places/an",
+      steps: { fr: ["Inscription auprès du Commissariat Général au Pèlerinage", "Tirage au sort national si le nombre d'inscrits dépasse le quota"], en: ["Register with the General Commission for Pilgrimage", "National lottery if registered candidates exceed quota"], ar: ["التسجيل في المفوضية العامة للحج", "قرعة وطنية إذا تجاوز عدد المسجلين الحصة"] } } },
+};
+
 /* ──────────────────── PROGRAMMES GÉNÉRÉS ──────────────────── */
 function buildOmraProgram(days, T, lang) {
   const t = (fr, en, ar) => ({ fr, en, ar }[lang] || fr);
@@ -407,14 +454,15 @@ export default function App() {
   const [openFaq, setOpenFaq] = useState(null);
   const [hotelCity, setHotelCity] = useState("makkah");
   const [checked, setChecked] = useState(() => { try { return JSON.parse(localStorage.getItem("ho_check") || "{}"); } catch { return {}; } });
+  const [visaCountry, setVisaCountry] = useState("fr");
 
   const T = LANG[lang];
   const isRTL = lang === "ar";
   const isLight = theme === "light";
   const tr = obj => obj[lang] || obj.fr;
 
-  const ritesRef = useRef(null), hotelsRef = useRef(null), checkRef = useRef(null), duasRef = useRef(null), faqRef = useRef(null), contactRef = useRef(null), plannerRef = useRef(null);
-  const navRefs = [ritesRef, hotelsRef, checkRef, duasRef, faqRef, contactRef];
+  const ritesRef = useRef(null), hotelsRef = useRef(null), checkRef = useRef(null), duasRef = useRef(null), faqRef = useRef(null), visaRef = useRef(null), contactRef = useRef(null), plannerRef = useRef(null);
+  const navRefs = [ritesRef, hotelsRef, checkRef, duasRef, faqRef, visaRef, contactRef];
 
   const HERO_KEYS = ["kaaba", "nabawi", "arafat"];
   useEffect(() => { const id = setInterval(() => setHeroIdx(i => (i + 1) % HERO_KEYS.length), 6000); return () => clearInterval(id); }, []);
@@ -422,25 +470,25 @@ export default function App() {
   useEffect(() => { try { localStorage.setItem("ho_check", JSON.stringify(checked)); } catch {} }, [checked]);
 
   const ST = isLight
-    ? { bg: "#FAF6EE", text: "#1A1408", textMuted: "#6B5D45", cardBg: "rgba(255,255,255,.72)", cardBorder: "rgba(73,54,31,.12)", headerBg: "rgba(250,246,238,.9)", heroMuted: "rgba(248,250,252,.78)", divider: "rgba(73,54,31,.1)", footerBg: "#F2ECDF" }
-    : { bg: "#10130E", text: "#F5F1E8", textMuted: "#A89C85", cardBg: "rgba(255,247,234,.045)", cardBorder: "rgba(212,165,116,.14)", headerBg: "rgba(20,24,17,.85)", heroMuted: "rgba(245,241,232,.75)", divider: "rgba(212,165,116,.12)", footerBg: "#0B0E0A" };
+    ? { bg: "#F3EFE3", text: "#1A2210", textMuted: "#556B4A", cardBg: "rgba(255,255,255,.72)", cardBorder: "rgba(40,80,40,.12)", headerBg: "rgba(243,239,227,.92)", heroMuted: "rgba(248,250,252,.78)", divider: "rgba(40,80,40,.1)", footerBg: "#EAE5D5" }
+    : { bg: "#070E09", text: "#F2EDD5", textMuted: "#8AA67E", cardBg: "rgba(255,248,225,.04)", cardBorder: "rgba(200,168,75,.14)", headerBg: "rgba(10,16,12,.9)", heroMuted: "rgba(242,237,213,.75)", divider: "rgba(200,168,75,.12)", footerBg: "#050C07" };
 
-  const GOLD = "#D4A574";
-  const GREEN = "#34D399";
+  const GOLD = "#C8A84B";   // or islamique classique
+  const GREEN = "#27AE60";  // vert islamique profond
 
   const css = `
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{background:${ST.bg};font-family:'Inter',sans-serif;color:${ST.text};}
-    ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-thumb{background:rgba(212,165,116,.25);border-radius:3px;}::-webkit-scrollbar-track{background:transparent;}
+    ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-thumb{background:rgba(200,168,75,.25);border-radius:3px;}::-webkit-scrollbar-track{background:transparent;}
     @keyframes fadeIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
     .fade-in{animation:fadeIn .7s ease forwards;}
     input,textarea,select{background:${isLight ? "rgba(26,18,8,.05)" : "rgba(255,255,255,.06)"};border:1px solid ${isLight ? "rgba(26,18,8,.16)" : "rgba(255,255,255,.12)"};border-radius:12px;color:${ST.text};padding:12px 14px;font-size:14px;font-family:'Inter',sans-serif;outline:none;width:100%;transition:border-color .2s;color-scheme:${isLight ? "light" : "dark"};}
     input:focus,textarea:focus,select:focus{border-color:${GOLD};}
     input::placeholder,textarea::placeholder{color:${isLight ? "rgba(107,93,69,.55)" : "rgba(168,156,133,.5)"};}
     .arabic{font-family:'Amiri',serif;}
-    .ho-burger{display:none;background:transparent;border:1px solid rgba(212,165,116,.25);border-radius:10px;font-size:17px;padding:7px 11px;cursor:pointer;align-items:center;justify-content:center;line-height:1;}
+    .ho-burger{display:none;background:transparent;border:1px solid rgba(200,168,75,.25);border-radius:10px;font-size:17px;padding:7px 11px;cursor:pointer;align-items:center;justify-content:center;line-height:1;}
     @media (max-width:980px){
       .ho-nav-desktop{display:none !important;}
       .ho-burger{display:flex;}
@@ -464,7 +512,7 @@ export default function App() {
 
   const sectionTitle = (badge, title, sub) => (
     <div style={{ textAlign: "center", marginBottom: 40, direction: isRTL ? "rtl" : "ltr" }}>
-      <div style={{ display: "inline-block", fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: "2px", fontWeight: 700, background: "rgba(212,165,116,.1)", border: "1px solid rgba(212,165,116,.22)", borderRadius: 30, padding: "7px 20px", marginBottom: 18 }}>✦ {badge}</div>
+      <div style={{ display: "inline-block", fontSize: 11, color: GOLD, textTransform: "uppercase", letterSpacing: "2px", fontWeight: 700, background: "rgba(200,168,75,.1)", border: "1px solid rgba(200,168,75,.22)", borderRadius: 30, padding: "7px 20px", marginBottom: 18 }}>✦ {badge}</div>
       <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(26px,3.6vw,42px)", fontWeight: 900, color: ST.text, marginBottom: 12 }}>{title}</h2>
       {sub && <p style={{ fontSize: 15, color: ST.textMuted, maxWidth: 560, margin: "0 auto", lineHeight: 1.7 }}>{sub}</p>}
     </div>
@@ -478,9 +526,9 @@ export default function App() {
       <div dir={isRTL ? "rtl" : "ltr"} style={{ background: ST.bg, color: ST.text, minHeight: "100vh" }}>
 
         {/* HEADER */}
-        <header className="ho-header no-print" style={{ position: "fixed", top: 14, left: 24, right: 24, zIndex: 200, background: ST.headerBg, backdropFilter: "blur(22px)", border: "1px solid rgba(212,165,116,.22)", borderRadius: 18, padding: "0 14px", minHeight: 64, display: "flex", alignItems: "center", justifyContent: "space-between", boxShadow: "0 18px 50px rgba(0,0,0,.28)" }}>
+        <header className="ho-header no-print" style={{ position: "fixed", top: 14, left: 24, right: 24, zIndex: 200, background: ST.headerBg, backdropFilter: "blur(22px)", border: "1px solid rgba(200,168,75,.22)", borderRadius: 18, padding: "0 14px", minHeight: 64, display: "flex", alignItems: "center", justifyContent: "space-between", boxShadow: "0 18px 50px rgba(0,0,0,.28)" }}>
           <button style={{ display: "flex", alignItems: "center", gap: 12, cursor: "pointer", background: "transparent", border: "none", padding: "8px 4px", fontFamily: "'Inter',sans-serif" }} onClick={() => { setView("home"); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
-            <img src={`${PUB}logo-kaaba.svg`} alt="HajjOmra Pro" style={{ width: 44, height: 44, borderRadius: 14, display: "block", boxShadow: "0 12px 30px rgba(212,165,116,.3)" }} />
+            <img src={`${PUB}logo-kaaba.svg`} alt="HajjOmra Pro" style={{ width: 44, height: 44, borderRadius: 14, display: "block", boxShadow: "0 12px 30px rgba(200,168,75,.3)" }} />
             <div style={{ textAlign: isRTL ? "right" : "left" }}>
               <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 20, fontWeight: 900, color: ST.text, letterSpacing: "-.3px", lineHeight: 1 }}>HajjOmra <span style={{ color: GOLD }}>Pro</span></div>
               <div className="ho-logo-tag" style={{ fontSize: 9, color: ST.textMuted, letterSpacing: "2px", textTransform: "uppercase", marginTop: 4 }}>Guide Hajj & Omra · FR EN AR</div>
@@ -488,7 +536,7 @@ export default function App() {
           </button>
 
           {view === "home" && (
-            <nav className="ho-nav-desktop" style={{ display: "flex", gap: 4, padding: 5, borderRadius: 14, background: isLight ? "rgba(255,255,255,.5)" : "rgba(255,247,234,.06)", border: "1px solid rgba(212,165,116,.12)" }}>
+            <nav className="ho-nav-desktop" style={{ display: "flex", gap: 4, padding: 5, borderRadius: 14, background: isLight ? "rgba(255,255,255,.5)" : "rgba(255,247,234,.06)", border: "1px solid rgba(200,168,75,.12)" }}>
               {T.nav.map((label, i) => (
                 <button key={label} onClick={() => navRefs[i].current?.scrollIntoView({ behavior: "smooth", block: "start" })} style={{ background: "transparent", border: "none", padding: "9px 12px", borderRadius: 11, fontSize: 13, color: ST.textMuted, cursor: "pointer", fontWeight: 700, fontFamily: "'Inter',sans-serif" }}
                   onMouseEnter={e => { e.currentTarget.style.color = ST.text; }} onMouseLeave={e => { e.currentTarget.style.color = ST.textMuted; }}>{label}</button>
@@ -498,16 +546,16 @@ export default function App() {
 
           <div style={{ display: "flex", gap: 7, alignItems: "center" }}>
             {["fr", "en", "ar"].map(l => (
-              <button key={l} onClick={() => setLang(l)} style={{ padding: "6px 9px", borderRadius: 9, border: `1px solid ${lang === l ? GOLD : "rgba(212,165,116,.18)"}`, background: lang === l ? "rgba(212,165,116,.13)" : "transparent", color: lang === l ? GOLD : ST.textMuted, fontSize: 10, fontWeight: lang === l ? 800 : 600, cursor: "pointer", fontFamily: "'Inter',sans-serif", textTransform: "uppercase", letterSpacing: "1px" }}>{l}</button>
+              <button key={l} onClick={() => setLang(l)} style={{ padding: "6px 9px", borderRadius: 9, border: `1px solid ${lang === l ? GOLD : "rgba(200,168,75,.18)"}`, background: lang === l ? "rgba(200,168,75,.13)" : "transparent", color: lang === l ? GOLD : ST.textMuted, fontSize: 10, fontWeight: lang === l ? 800 : 600, cursor: "pointer", fontFamily: "'Inter',sans-serif", textTransform: "uppercase", letterSpacing: "1px" }}>{l}</button>
             ))}
-            <button onClick={() => setTheme(t => t === "dark" ? "light" : "dark")} style={{ padding: "8px 10px", borderRadius: 10, border: "1px solid rgba(212,165,116,.2)", background: "transparent", color: ST.textMuted, fontSize: 15, cursor: "pointer" }}>{theme === "dark" ? "☀️" : "🌙"}</button>
+            <button onClick={() => setTheme(t => t === "dark" ? "light" : "dark")} style={{ padding: "8px 10px", borderRadius: 10, border: "1px solid rgba(200,168,75,.2)", background: "transparent", color: ST.textMuted, fontSize: 15, cursor: "pointer" }}>{theme === "dark" ? "☀️" : "🌙"}</button>
             {view === "home" && (
               <button className="ho-burger" onClick={() => setShowMobileNav(s => !s)} aria-label="Menu" style={{ color: ST.text }}>{showMobileNav ? "✕" : "☰"}</button>
             )}
           </div>
 
           {view === "home" && showMobileNav && (
-            <div style={{ position: "absolute", top: "calc(100% + 10px)", left: 0, right: 0, background: isLight ? "rgba(250,246,238,.98)" : "rgba(20,24,17,.97)", backdropFilter: "blur(22px)", border: "1px solid rgba(212,165,116,.22)", borderRadius: 16, padding: 10, display: "flex", flexDirection: "column", gap: 2, boxShadow: "0 24px 60px rgba(0,0,0,.35)", direction: isRTL ? "rtl" : "ltr" }}>
+            <div style={{ position: "absolute", top: "calc(100% + 10px)", left: 0, right: 0, background: isLight ? "rgba(250,246,238,.98)" : "rgba(20,24,17,.97)", backdropFilter: "blur(22px)", border: "1px solid rgba(200,168,75,.22)", borderRadius: 16, padding: 10, display: "flex", flexDirection: "column", gap: 2, boxShadow: "0 24px 60px rgba(0,0,0,.35)", direction: isRTL ? "rtl" : "ltr" }}>
               {T.nav.map((label, i) => (
                 <button key={label} onClick={() => { setShowMobileNav(false); navRefs[i].current?.scrollIntoView({ behavior: "smooth", block: "start" }); }} style={{ background: "transparent", border: "none", padding: "13px 16px", borderRadius: 11, fontSize: 14, color: ST.text, cursor: "pointer", fontWeight: 700, fontFamily: "'Inter',sans-serif", textAlign: isRTL ? "right" : "left" }}>{label}</button>
               ))}
@@ -524,26 +572,26 @@ export default function App() {
               ))}
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg,rgba(8,10,6,.25) 0%,rgba(8,10,6,.55) 50%,rgba(16,19,14,.97) 100%)" }} />
               <div style={{ position: "relative", zIndex: 2, textAlign: "center", maxWidth: 820, padding: "110px 28px 60px", direction: isRTL ? "rtl" : "ltr" }}>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(212,165,116,.12)", border: "1px solid rgba(212,165,116,.28)", borderRadius: 30, padding: "7px 20px", fontSize: 11, color: GOLD, fontWeight: 700, letterSpacing: "1.8px", textTransform: "uppercase", marginBottom: 28 }}>🕋 {T.hero_badge}</div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(200,168,75,.12)", border: "1px solid rgba(200,168,75,.28)", borderRadius: 30, padding: "7px 20px", fontSize: 11, color: GOLD, fontWeight: 700, letterSpacing: "1.8px", textTransform: "uppercase", marginBottom: 28 }}>🕋 {T.hero_badge}</div>
                 <h1 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(40px,7vw,76px)", fontWeight: 900, lineHeight: 1.07, marginBottom: 20, color: "#F8FAFC" }}>
                   {T.hero_h1[0]}<br /><span style={{ background: "linear-gradient(135deg,#D4A574,#F0C896)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{T.hero_h1[1]}</span><br />{T.hero_h1[2]}
                 </h1>
                 <p style={{ fontSize: "clamp(15px,2vw,18px)", color: ST.heroMuted, lineHeight: 1.7, marginBottom: 36, maxWidth: 580, margin: "0 auto 36px" }}>{T.hero_p}</p>
-                <button onClick={() => plannerRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ background: "linear-gradient(135deg,#D4A574,#B8834A)", color: "white", border: "none", padding: "16px 38px", borderRadius: 14, fontSize: 16, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif", boxShadow: "0 8px 32px rgba(212,165,116,.4)", transition: "transform .2s" }}
+                <button onClick={() => plannerRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })} style={{ background: "linear-gradient(135deg,#D4A574,#B8834A)", color: "white", border: "none", padding: "16px 38px", borderRadius: 14, fontSize: 16, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif", boxShadow: "0 8px 32px rgba(200,168,75,.4)", transition: "transform .2s" }}
                   onMouseEnter={e => e.currentTarget.style.transform = "translateY(-2px)"} onMouseLeave={e => e.currentTarget.style.transform = "none"}>{T.hero_cta}</button>
               </div>
             </section>
 
             {/* PLANNER */}
             <div ref={plannerRef} style={{ position: "relative", zIndex: 50, padding: "0 24px", marginTop: -70 }}>
-              <div style={{ maxWidth: 980, margin: "0 auto", background: isLight ? "rgba(255,255,255,.9)" : "rgba(22,26,18,.92)", backdropFilter: "blur(28px)", border: "1px solid rgba(212,165,116,.25)", borderRadius: 24, padding: "26px 28px", boxShadow: "0 24px 72px rgba(0,0,0,.5)", direction: isRTL ? "rtl" : "ltr" }}>
+              <div style={{ maxWidth: 980, margin: "0 auto", background: isLight ? "rgba(255,255,255,.9)" : "rgba(22,26,18,.92)", backdropFilter: "blur(28px)", border: "1px solid rgba(200,168,75,.25)", borderRadius: 24, padding: "26px 28px", boxShadow: "0 24px 72px rgba(0,0,0,.5)", direction: isRTL ? "rtl" : "ltr" }}>
                 <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 22, fontWeight: 900, marginBottom: 20, color: ST.text }}>🕋 {T.planner_title}</div>
                 <div className="ho-planner-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16, marginBottom: 18 }}>
                   <div>
                     <div style={{ fontSize: 10, color: GOLD, textTransform: "uppercase", letterSpacing: "1.5px", fontWeight: 700, marginBottom: 8 }}>{T.lbl_type}</div>
                     <div style={{ display: "flex", gap: 6 }}>
                       {["omra", "hajj"].map(p => (
-                        <button key={p} onClick={() => setPtype(p)} style={{ flex: 1, padding: "11px 8px", borderRadius: 11, border: `1px solid ${ptype === p ? GOLD : "rgba(212,165,116,.18)"}`, background: ptype === p ? "rgba(212,165,116,.16)" : "transparent", color: ptype === p ? GOLD : ST.textMuted, fontSize: 13, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{T[p]}</button>
+                        <button key={p} onClick={() => setPtype(p)} style={{ flex: 1, padding: "11px 8px", borderRadius: 11, border: `1px solid ${ptype === p ? GOLD : "rgba(200,168,75,.18)"}`, background: ptype === p ? "rgba(200,168,75,.16)" : "transparent", color: ptype === p ? GOLD : ST.textMuted, fontSize: 13, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{T[p]}</button>
                       ))}
                     </div>
                   </div>
@@ -558,15 +606,15 @@ export default function App() {
                         {[7, 10, 14, 21].map(d => <option key={d} value={d}>{T.days(d)}</option>)}
                       </select>
                     ) : (
-                      <div style={{ padding: "12px 14px", borderRadius: 12, border: "1px solid rgba(212,165,116,.18)", fontSize: 13, color: ST.textMuted }}>8 → 13 Dhul-Hijjah</div>
+                      <div style={{ padding: "12px 14px", borderRadius: 12, border: "1px solid rgba(200,168,75,.18)", fontSize: 13, color: ST.textMuted }}>8 → 13 Dhul-Hijjah</div>
                     )}
                   </div>
                   <div>
                     <div style={{ fontSize: 10, color: GOLD, textTransform: "uppercase", letterSpacing: "1.5px", fontWeight: 700, marginBottom: 8 }}>{T.lbl_travelers}</div>
-                    <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 12px", borderRadius: 12, border: "1px solid rgba(212,165,116,.18)" }}>
-                      <button onClick={() => setTravelers(n => Math.max(1, n - 1))} style={{ width: 26, height: 26, borderRadius: 8, border: "1px solid rgba(212,165,116,.3)", background: "transparent", color: GOLD, cursor: "pointer", fontSize: 14, fontWeight: 800 }}>−</button>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 12px", borderRadius: 12, border: "1px solid rgba(200,168,75,.18)" }}>
+                      <button onClick={() => setTravelers(n => Math.max(1, n - 1))} style={{ width: 26, height: 26, borderRadius: 8, border: "1px solid rgba(200,168,75,.3)", background: "transparent", color: GOLD, cursor: "pointer", fontSize: 14, fontWeight: 800 }}>−</button>
                       <span style={{ flex: 1, textAlign: "center", fontSize: 13, fontWeight: 700 }}>{T.travelers_fn(travelers)}</span>
-                      <button onClick={() => setTravelers(n => Math.min(20, n + 1))} style={{ width: 26, height: 26, borderRadius: 8, border: "1px solid rgba(212,165,116,.3)", background: "transparent", color: GOLD, cursor: "pointer", fontSize: 14, fontWeight: 800 }}>+</button>
+                      <button onClick={() => setTravelers(n => Math.min(20, n + 1))} style={{ width: 26, height: 26, borderRadius: 8, border: "1px solid rgba(200,168,75,.3)", background: "transparent", color: GOLD, cursor: "pointer", fontSize: 14, fontWeight: 800 }}>+</button>
                     </div>
                   </div>
                 </div>
@@ -575,7 +623,7 @@ export default function App() {
                     <div style={{ fontSize: 10, color: GOLD, textTransform: "uppercase", letterSpacing: "1.5px", fontWeight: 700, marginBottom: 8 }}>{T.lbl_budget}</div>
                     <div style={{ display: "flex", gap: 6 }}>
                       {Object.entries(BUDGETS).map(([key, val]) => (
-                        <button key={key} onClick={() => setBudget(key)} title={tr(val.label)} style={{ flex: 1, padding: "10px 8px", borderRadius: 11, border: `1px solid ${budget === key ? val.color : "rgba(212,165,116,.18)"}`, background: budget === key ? `${val.color}22` : "transparent", color: budget === key ? val.color : ST.textMuted, fontSize: 17, cursor: "pointer" }}>{val.icon}</button>
+                        <button key={key} onClick={() => setBudget(key)} title={tr(val.label)} style={{ flex: 1, padding: "10px 8px", borderRadius: 11, border: `1px solid ${budget === key ? val.color : "rgba(200,168,75,.18)"}`, background: budget === key ? `${val.color}22` : "transparent", color: budget === key ? val.color : ST.textMuted, fontSize: 17, cursor: "pointer" }}>{val.icon}</button>
                       ))}
                     </div>
                   </div>
@@ -589,13 +637,13 @@ export default function App() {
               {sectionTitle("Hajj & Omra", T.rites_title, T.rites_sub)}
               <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 34 }}>
                 {["omra", "hajj"].map(p => (
-                  <button key={p} onClick={() => setPtype(p)} style={{ padding: "11px 32px", borderRadius: 24, border: `1px solid ${ptype === p ? GOLD : "rgba(212,165,116,.2)"}`, background: ptype === p ? "rgba(212,165,116,.15)" : "transparent", color: ptype === p ? GOLD : ST.textMuted, fontSize: 14, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{T[p]}</button>
+                  <button key={p} onClick={() => setPtype(p)} style={{ padding: "11px 32px", borderRadius: 24, border: `1px solid ${ptype === p ? GOLD : "rgba(200,168,75,.2)"}`, background: ptype === p ? "rgba(200,168,75,.15)" : "transparent", color: ptype === p ? GOLD : ST.textMuted, fontSize: 14, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{T[p]}</button>
                 ))}
               </div>
               <div style={{ display: "grid", gap: 14, direction: isRTL ? "rtl" : "ltr" }}>
                 {RITES[ptype].map((r, i) => (
                   <div key={i} style={{ display: "flex", gap: 18, background: ST.cardBg, border: `1px solid ${ST.cardBorder}`, borderRadius: 18, padding: "20px 22px", alignItems: "flex-start" }}>
-                    <div style={{ flexShrink: 0, width: 46, height: 46, borderRadius: 14, background: "rgba(212,165,116,.12)", border: "1px solid rgba(212,165,116,.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 21 }}>{r.icon}</div>
+                    <div style={{ flexShrink: 0, width: 46, height: 46, borderRadius: 14, background: "rgba(200,168,75,.12)", border: "1px solid rgba(200,168,75,.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 21 }}>{r.icon}</div>
                     <div style={{ flex: 1 }}>
                       <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap", marginBottom: 7 }}>
                         <span style={{ fontSize: 11, fontWeight: 800, color: GREEN, background: "rgba(52,211,153,.1)", border: "1px solid rgba(52,211,153,.2)", borderRadius: 8, padding: "2px 9px" }}>{i + 1}</span>
@@ -630,7 +678,7 @@ export default function App() {
                 {sectionTitle("Hébergement", T.hotels_title, T.hotels_sub)}
                 <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 34 }}>
                   {["makkah", "madinah"].map(c => (
-                    <button key={c} onClick={() => setHotelCity(c)} style={{ padding: "11px 32px", borderRadius: 24, border: `1px solid ${hotelCity === c ? GOLD : "rgba(212,165,116,.2)"}`, background: hotelCity === c ? "rgba(212,165,116,.15)" : "transparent", color: hotelCity === c ? GOLD : ST.textMuted, fontSize: 14, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{c === "makkah" ? "🕋" : "🕌"} {T[c]}</button>
+                    <button key={c} onClick={() => setHotelCity(c)} style={{ padding: "11px 32px", borderRadius: 24, border: `1px solid ${hotelCity === c ? GOLD : "rgba(200,168,75,.2)"}`, background: hotelCity === c ? "rgba(200,168,75,.15)" : "transparent", color: hotelCity === c ? GOLD : ST.textMuted, fontSize: 14, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{c === "makkah" ? "🕋" : "🕌"} {T[c]}</button>
                   ))}
                 </div>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(280px,1fr))", gap: 18, direction: isRTL ? "rtl" : "ltr" }}>
@@ -674,7 +722,7 @@ export default function App() {
                 ))}
               </div>
               <div style={{ textAlign: "center", marginTop: 22 }}>
-                <button onClick={() => setChecked({})} style={{ background: "transparent", border: "1px solid rgba(212,165,116,.25)", color: ST.textMuted, padding: "9px 22px", borderRadius: 12, fontSize: 13, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>↺ {T.checklist_reset}</button>
+                <button onClick={() => setChecked({})} style={{ background: "transparent", border: "1px solid rgba(200,168,75,.25)", color: ST.textMuted, padding: "9px 22px", borderRadius: 12, fontSize: 13, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>↺ {T.checklist_reset}</button>
               </div>
             </section>
 
@@ -700,7 +748,7 @@ export default function App() {
               {sectionTitle("FAQ", T.faq_title)}
               <div style={{ display: "grid", gap: 12, direction: isRTL ? "rtl" : "ltr" }}>
                 {FAQ.map((f, i) => (
-                  <div key={i} style={{ background: ST.cardBg, border: `1px solid ${openFaq === i ? "rgba(212,165,116,.35)" : ST.cardBorder}`, borderRadius: 16, overflow: "hidden" }}>
+                  <div key={i} style={{ background: ST.cardBg, border: `1px solid ${openFaq === i ? "rgba(200,168,75,.35)" : ST.cardBorder}`, borderRadius: 16, overflow: "hidden" }}>
                     <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14, padding: "17px 22px", background: "transparent", border: "none", cursor: "pointer", fontFamily: "'Inter',sans-serif", textAlign: isRTL ? "right" : "left" }}>
                       <span style={{ fontSize: 14.5, fontWeight: 700, color: ST.text }}>{tr(f.q)}</span>
                       <span style={{ color: GOLD, fontSize: 18, flexShrink: 0 }}>{openFaq === i ? "−" : "+"}</span>
@@ -708,6 +756,51 @@ export default function App() {
                     {openFaq === i && <div style={{ padding: "0 22px 18px", fontSize: 14, color: ST.textMuted, lineHeight: 1.75 }}>{tr(f.a)}</div>}
                   </div>
                 ))}
+              </div>
+            </section>
+
+            {/* VISA */}
+            <section ref={visaRef} style={{ padding: "70px 24px", maxWidth: 1000, margin: "0 auto" }}>
+              {sectionTitle("Visa & Prérequis", T.visa_title, T.visa_sub)}
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: 32, direction: isRTL ? "rtl" : "ltr" }}>
+                {Object.entries(VISA_COUNTRIES).map(([key, c]) => (
+                  <button key={key} onClick={() => setVisaCountry(key)} style={{ padding: "9px 16px", borderRadius: 24, border: `1px solid ${visaCountry === key ? GOLD : "rgba(200,168,75,.2)"}`, background: visaCountry === key ? "rgba(200,168,75,.15)" : "transparent", color: visaCountry === key ? GOLD : ST.textMuted, fontSize: 13, fontWeight: 700, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>
+                    {VISA_COUNTRIES[key].flag} {tr(VISA_COUNTRIES[key].name)}
+                  </button>
+                ))}
+              </div>
+              {(() => {
+                const c = VISA_COUNTRIES[visaCountry];
+                return (
+                  <div className="ho-contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, direction: isRTL ? "rtl" : "ltr" }}>
+                    <div style={{ background: ST.cardBg, border: `1px solid ${ST.cardBorder}`, borderRadius: 20, padding: 22 }}>
+                      <div style={{ fontSize: 14, fontWeight: 800, color: GREEN, marginBottom: 14 }}>🕋 {T.omra} — {T.visa_omra_title}</div>
+                      <div style={{ fontSize: 12, color: GOLD, fontWeight: 700, marginBottom: 14, background: "rgba(200,168,75,.08)", borderRadius: 8, padding: "6px 10px", display: "inline-block" }}>💰 {T.visa_cost} : {c.omra.cost}</div>
+                      <ul style={{ listStyle: "none", display: "grid", gap: 10 }}>
+                        {tr(c.omra.steps).map((step, i) => (
+                          <li key={i} style={{ fontSize: 13, color: ST.textMuted, lineHeight: 1.6, paddingInlineStart: 22, position: "relative" }}>
+                            <span style={{ position: "absolute", insetInlineStart: 0, color: GREEN, fontWeight: 800 }}>{i + 1}.</span>{step}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div style={{ background: ST.cardBg, border: `1px solid ${ST.cardBorder}`, borderRadius: 20, padding: 22 }}>
+                      <div style={{ fontSize: 14, fontWeight: 800, color: GOLD, marginBottom: 14 }}>🏔 {T.hajj} — {T.visa_hajj_title}</div>
+                      <div style={{ fontSize: 12, color: ST.textMuted, marginBottom: 6, lineHeight: 1.6 }}>🏛 {tr(c.hajj.body)}</div>
+                      <div style={{ fontSize: 12, color: GOLD, fontWeight: 700, marginBottom: 14, background: "rgba(200,168,75,.08)", borderRadius: 8, padding: "6px 10px", display: "inline-block" }}>📊 {T.visa_quota} : {c.hajj.quota}</div>
+                      <ul style={{ listStyle: "none", display: "grid", gap: 10 }}>
+                        {tr(c.hajj.steps).map((step, i) => (
+                          <li key={i} style={{ fontSize: 13, color: ST.textMuted, lineHeight: 1.6, paddingInlineStart: 22, position: "relative" }}>
+                            <span style={{ position: "absolute", insetInlineStart: 0, color: GOLD, fontWeight: 800 }}>{i + 1}.</span>{step}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                );
+              })()}
+              <div style={{ marginTop: 20, padding: "14px 18px", background: "rgba(200,168,75,.07)", border: "1px solid rgba(200,168,75,.18)", borderRadius: 14, fontSize: 12, color: ST.textMuted, lineHeight: 1.7, direction: isRTL ? "rtl" : "ltr" }}>
+                ℹ️ {T.visa_note}
               </div>
             </section>
 
@@ -730,7 +823,7 @@ export default function App() {
                   </div>
                   <label style={{ display: "grid", gap: 7, fontSize: 12, color: ST.textMuted, fontWeight: 700 }}>{T.contact_subject}<input required name="sujet" placeholder={T.contact_subject_ph} /></label>
                   <label style={{ display: "grid", gap: 7, fontSize: 12, color: ST.textMuted, fontWeight: 700 }}>{T.contact_message}<textarea required name="message" rows="6" placeholder={T.contact_message_ph} style={{ resize: "vertical", minHeight: 130 }} /></label>
-                  <button type="submit" style={{ background: "linear-gradient(135deg,#D4A574,#B8834A)", color: "white", border: "none", padding: "14px 22px", borderRadius: 14, fontSize: 14, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif", justifySelf: "start", boxShadow: "0 8px 26px rgba(212,165,116,.28)" }}>{T.contact_submit}</button>
+                  <button type="submit" style={{ background: "linear-gradient(135deg,#D4A574,#B8834A)", color: "white", border: "none", padding: "14px 22px", borderRadius: 14, fontSize: 14, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif", justifySelf: "start", boxShadow: "0 8px 26px rgba(200,168,75,.28)" }}>{T.contact_submit}</button>
                 </form>
               </div>
             </section>
@@ -741,7 +834,7 @@ export default function App() {
         {view === "program" && (
           <section style={{ padding: "110px 24px 80px", maxWidth: 880, margin: "0 auto", direction: isRTL ? "rtl" : "ltr" }} className="fade-in">
             <div className="no-print" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, marginBottom: 26 }}>
-              <button onClick={() => setView("home")} style={{ background: "transparent", border: "1px solid rgba(212,165,116,.25)", color: ST.textMuted, padding: "9px 18px", borderRadius: 11, fontSize: 13, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{T.back_home}</button>
+              <button onClick={() => setView("home")} style={{ background: "transparent", border: "1px solid rgba(200,168,75,.25)", color: ST.textMuted, padding: "9px 18px", borderRadius: 11, fontSize: 13, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{T.back_home}</button>
               <button onClick={() => window.print()} style={{ background: "linear-gradient(135deg,#D4A574,#B8834A)", color: "white", border: "none", padding: "10px 22px", borderRadius: 11, fontSize: 13, fontWeight: 800, cursor: "pointer", fontFamily: "'Inter',sans-serif" }}>{T.print_btn}</button>
             </div>
 
@@ -764,7 +857,7 @@ export default function App() {
               {program.map((p, i) => (
                 <div key={i} style={{ display: "flex", gap: 16, background: ST.cardBg, border: `1px solid ${ST.cardBorder}`, borderRadius: 18, padding: "18px 20px" }}>
                   <div style={{ flexShrink: 0, textAlign: "center" }}>
-                    <div style={{ width: 46, height: 46, borderRadius: 14, background: "rgba(212,165,116,.12)", border: "1px solid rgba(212,165,116,.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>{p.icon}</div>
+                    <div style={{ width: 46, height: 46, borderRadius: 14, background: "rgba(200,168,75,.12)", border: "1px solid rgba(200,168,75,.25)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20 }}>{p.icon}</div>
                     <div style={{ fontSize: 10, color: GOLD, fontWeight: 800, marginTop: 6, textTransform: "uppercase" }}>{typeof p.d === "number" ? `${T.day} ${p.d}` : p.d}</div>
                   </div>
                   <div style={{ flex: 1 }}>
