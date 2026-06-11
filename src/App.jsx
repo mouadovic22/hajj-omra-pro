@@ -528,9 +528,9 @@ export default function App() {
         {/* HEADER */}
         <header className="ho-header no-print" style={{ position: "fixed", top: 14, left: 24, right: 24, zIndex: 200, background: ST.headerBg, backdropFilter: "blur(22px)", border: "1px solid rgba(200,168,75,.22)", borderRadius: 18, padding: "0 14px", minHeight: 64, display: "flex", alignItems: "center", justifyContent: "space-between", boxShadow: "0 18px 50px rgba(0,0,0,.28)" }}>
           <button style={{ display: "flex", alignItems: "center", gap: 12, cursor: "pointer", background: "transparent", border: "none", padding: "8px 4px", fontFamily: "'Inter',sans-serif" }} onClick={() => { setView("home"); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
-            <img src={`${PUB}logo-kaaba.svg`} alt="HajjOmra Pro" style={{ width: 44, height: 44, borderRadius: 14, display: "block", boxShadow: "0 12px 30px rgba(200,168,75,.3)" }} />
+            <img src={`${PUB}logo-kaaba.svg`} alt="manasik.info" style={{ width: 44, height: 44, borderRadius: 14, display: "block", boxShadow: "0 12px 30px rgba(200,168,75,.3)" }} />
             <div style={{ textAlign: isRTL ? "right" : "left" }}>
-              <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 20, fontWeight: 900, color: ST.text, letterSpacing: "-.3px", lineHeight: 1 }}>HajjOmra <span style={{ color: GOLD }}>Pro</span></div>
+              <div style={{ fontFamily: "'Playfair Display',serif", fontSize: 20, fontWeight: 900, color: ST.text, letterSpacing: "-.3px", lineHeight: 1 }}>manasik<span style={{ color: GOLD }}>.info</span></div>
               <div className="ho-logo-tag" style={{ fontSize: 9, color: ST.textMuted, letterSpacing: "2px", textTransform: "uppercase", marginTop: 4 }}>Guide Hajj & Omra · FR EN AR</div>
             </div>
           </button>
@@ -813,7 +813,7 @@ export default function App() {
                   <p style={{ fontSize: 15, color: ST.textMuted, lineHeight: 1.8 }}>{T.contact_desc}</p>
                 </div>
                 <form action="https://formsubmit.co/mouad.ouhaddou@gmail.com" method="POST" style={{ background: ST.cardBg, border: `1px solid ${ST.cardBorder}`, borderRadius: 22, padding: 24, display: "grid", gap: 14 }}>
-                  <input type="hidden" name="_subject" value="Nouveau message depuis HajjOmra Pro" />
+                  <input type="hidden" name="_subject" value="Nouveau message depuis manasik.info" />
                   <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="text" name="_honey" style={{ display: "none" }} tabIndex="-1" autoComplete="off" />
@@ -904,8 +904,8 @@ export default function App() {
             <div className="ho-footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1.4fr", gap: 40, marginBottom: 40 }}>
               <div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-                  <img src={`${PUB}logo-kaaba.svg`} alt="HajjOmra Pro" style={{ width: 30, height: 30, borderRadius: 10 }} />
-                  <span style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, fontWeight: 900, color: ST.text }}>HajjOmra <span style={{ color: GOLD }}>Pro</span></span>
+                  <img src={`${PUB}logo-kaaba.svg`} alt="manasik.info" style={{ width: 30, height: 30, borderRadius: 10 }} />
+                  <span style={{ fontFamily: "'Playfair Display',serif", fontSize: 18, fontWeight: 900, color: ST.text }}>manasik<span style={{ color: GOLD }}>.info</span></span>
                 </div>
                 <p style={{ fontSize: 13, color: ST.textMuted, lineHeight: 1.8, maxWidth: 380 }}>{T.footer_desc}</p>
               </div>
@@ -924,7 +924,7 @@ export default function App() {
               </div>
             </div>
             <div style={{ borderTop: `1px solid ${ST.divider}`, paddingTop: 22, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 10, fontSize: 12, color: ST.textMuted }}>
-              <span>© {new Date().getFullYear()} HajjOmra Pro</span>
+              <span>© {new Date().getFullYear()} manasik.info</span>
               <span className="arabic" style={{ fontSize: 14 }}>تقبل الله منا ومنكم</span>
             </div>
           </div>
