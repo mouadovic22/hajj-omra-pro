@@ -218,9 +218,15 @@ const MIQATS = [
 
 /* ──────────────────────────── BUDGETS ─────────────────────── */
 const BUDGETS = {
-  serré: { icon: "🎒", color: "#2DD4BF", label: { fr: "Économique", en: "Budget", ar: "اقتصادي" }, omra: "≈ 1 200 – 1 800 €", hajj: "≈ 5 000 – 7 000 €" },
-  moyen: { icon: "✈️", color: "#F59E0B", label: { fr: "Confort", en: "Comfort", ar: "مريح" }, omra: "≈ 2 000 – 3 500 €", hajj: "≈ 7 000 – 11 000 €" },
-  riche: { icon: "💎", color: "#8B5CF6", label: { fr: "Premium", en: "Premium", ar: "فاخر" }, omra: "≈ 4 000 € +", hajj: "≈ 12 000 € +" },
+  serré: { icon: "🎒", color: "#2DD4BF", label: { fr: "Économique", en: "Budget", ar: "اقتصادي" },
+    omra: { fr: "≈ 1 200 – 1 800 €", en: "≈ €1,200 – €1,800", ar: "≈ ١٢٠٠ – ١٨٠٠ €" },
+    hajj: { fr: "≈ 5 000 – 7 000 €", en: "≈ €5,000 – €7,000", ar: "≈ ٥٠٠٠ – ٧٠٠٠ €" } },
+  moyen: { icon: "✈️", color: "#F59E0B", label: { fr: "Confort", en: "Comfort", ar: "مريح" },
+    omra: { fr: "≈ 2 000 – 3 500 €", en: "≈ €2,000 – €3,500", ar: "≈ ٢٠٠٠ – ٣٥٠٠ €" },
+    hajj: { fr: "≈ 7 000 – 11 000 €", en: "≈ €7,000 – €11,000", ar: "≈ ٧٠٠٠ – ١١٠٠٠ €" } },
+  riche: { icon: "💎", color: "#8B5CF6", label: { fr: "Premium", en: "Premium", ar: "فاخر" },
+    omra: { fr: "≈ 4 000 € +", en: "≈ €4,000+", ar: "≈ ٤٠٠٠ €+" },
+    hajj: { fr: "≈ 12 000 € +", en: "≈ €12,000+", ar: "≈ ١٢٠٠٠ €+" } },
 };
 
 /* ──────────────────────────── HÔTELS ──────────────────────── */
@@ -755,7 +761,7 @@ export default function App() {
             {/* Budget estimate */}
             <div style={{ background: `${BUDGETS[budget].color}11`, border: `1px solid ${BUDGETS[budget].color}33`, borderRadius: 18, padding: "18px 22px", marginBottom: 30 }}>
               <div style={{ fontSize: 11, color: BUDGETS[budget].color, fontWeight: 800, textTransform: "uppercase", letterSpacing: "1.2px", marginBottom: 6 }}>{BUDGETS[budget].icon} {T.budget_est}</div>
-              <div style={{ fontSize: 24, fontWeight: 900, color: ST.text, marginBottom: 6 }}>{BUDGETS[budget][ptype]}</div>
+              <div style={{ fontSize: 24, fontWeight: 900, color: ST.text, marginBottom: 6 }} dir="ltr">{tr(BUDGETS[budget][ptype])}</div>
               <div style={{ fontSize: 12, color: ST.textMuted, lineHeight: 1.6 }}>{T.budget_note}</div>
             </div>
 
